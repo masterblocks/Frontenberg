@@ -3,7 +3,7 @@
 add_action( 'init', function() {
 	add_theme_support( 'align-wide' );
 	show_admin_bar( true );
-	
+
 	add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_script('postbox',admin_url("js/postbox.min.js"),array( 'jquery-ui-sortable' ),false, 1 );
 		wp_enqueue_style('dashicons');
@@ -90,18 +90,18 @@ function frontenberg_remove_toolbar_node($wp_admin_bar) {
 		'href'  => home_url(),
         'meta'  => array(
 			'class' => 'wp-logo',
-			'title' => __('FrontenBerg'),            
+			'title' => __('Master Blocks Pro'),
 		),
 	));
 	$wp_admin_bar->add_menu( array(
-		'id'    => 'frontenderg',
-		'title' => 'Frontenberg',
+		'id'    => 'master_blocks',
+		'title' => 'Master Blocks Pro',
 		'href'  => home_url(),
 		'meta'  => array(
-			'title' => __('FrontenBerg'),            
+			'title' => __('Master Blocks Pro'),
         ),
     ));
-	
+
 }
 add_action('admin_bar_menu', 'frontenberg_remove_toolbar_node', 999);
 
@@ -170,7 +170,7 @@ add_action( 'wp_footer', function() {
 	<script>
 	// @TODO: This setTimeout hack doesn't sit well with me, find a better solution that doesn't require jQuery
 	setTimeout( function() {
-		window._wpLoadGutenbergEditor.then( function( editor ) { 
+		window._wpLoadGutenbergEditor.then( function( editor ) {
 			wp.apiFetch.use( function ( options, next ) {
 				if ( 'method' in options ) {
 					if ( [ 'PATCH', 'PUT', 'DELETE' ].indexOf( options.method.toUpperCase() ) >= 0 ) {

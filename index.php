@@ -2,9 +2,6 @@
 
 get_header();
 
-$data = get_plugin_data( WP_PLUGIN_DIR . '/gutenberg/gutenberg.php' );
-$gutenberg_version = $data['Version'];
-
 ?>
 <div id="wpwrap">
 	<div id="wpcontent">
